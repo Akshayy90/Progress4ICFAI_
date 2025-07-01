@@ -1280,7 +1280,7 @@ def main():
         status_text = st.empty()
         
         # Limit the number of projects to analyze to avoid timeout
-        max_projects = min(len(projects), 500)  # Limit to 50 most recent projects
+        max_projects = min(len(projects), 900)  # Limit to 50 most recent projects
         projects_to_analyze = projects[:max_projects]
         
         if len(projects) > max_projects:
