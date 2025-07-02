@@ -697,7 +697,7 @@ def validate_group_access(group_id):
     else:
         return {"success": False, "error": result["error"]}
 
-@st.cache_data(ttl=300)  # Cache for 5 minutes
+@st.cache_data(ttl=None)  # Cache for 5 minutes
 def get_group_members(group_id):
     """Fetch all members from a GitLab group with improved error handling"""
     headers = get_gitlab_headers()
@@ -745,7 +745,7 @@ def get_group_members(group_id):
     
     return {"success": True, "data": members}
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=None)
 def get_all_accessible_projects():
     """Get all accessible projects for the user with improved error handling"""
     headers = get_gitlab_headers()
